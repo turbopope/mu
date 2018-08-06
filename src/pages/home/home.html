@@ -11,4 +11,21 @@
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
+
+  <p *ngIf="food | async as food">
+    Why don't you eat {{ food.name }}? It's only {{ food.energy }} kcal.
+  </p>
+
+  <!-- <p *ngIf="food | async as food">
+    Why don't you eat {{ grams }} g of {{ food.name }}? It's only {{ energy }} kcal.
+  </p> -->
+
+  <!-- <ion-item>
+    <ion-range min="0" max="200" step="5" [formControl]="gramControl">
+      <ion-icon small range-left name="sunny"></ion-icon>
+      <ion-icon range-right name="sunny"></ion-icon>
+    </ion-range>
+  </ion-item> -->
+
+  <code><pre>{{food | async | json}}</pre></code>
 </ion-content>
