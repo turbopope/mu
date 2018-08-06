@@ -1,0 +1,91 @@
+Source: USDA National Nutrient Database for Standard Reference Legacy April 2018 Software v.3.9.4.5 2018-07-24
+Statistics Report
+Report Run at: August 06 2018 15:21 EDT
+"Nutrient data for: Oats (Includes foods for USDA's Food Distribution Program)"
+Nutrient,Unit, Value(100g),Data points,Std. Error,Min,Max,df,LB,UB,# Studies,Source,NDB Ref,Last Modified
+
+Proximates
+"Water",g,8.22,17,0.380,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Energy",kcal,389,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Energy",kJ,1628,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,05/2005
+"Protein",g,16.89,50,0.320,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Total lipid (fat)",g,6.90,14,0.700,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Ash",g,1.72,2,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Carbohydrate, by difference",g,66.27,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Fiber, total dietary",g,10.6,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,01/1994
+Minerals
+"Calcium, Ca",mg,54,8,2.000,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Iron, Fe",mg,4.72,37,0.130,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Magnesium, Mg",mg,177,14,7.000,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Phosphorus, P",mg,523,14,18.000,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Potassium, K",mg,429,14,21.000,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Sodium, Na",mg,2,2,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Zinc, Zn",mg,3.97,37,0.180,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Copper, Cu",mg,0.626,32,0.024,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Manganese, Mn",mg,4.916,18,0.420,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+Vitamins
+"Vitamin C, total ascorbic acid",mg,0.0,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Thiamin",mg,0.763,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Riboflavin",mg,0.139,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Niacin",mg,0.961,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Pantothenic acid",mg,1.349,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Vitamin B-6",mg,0.119,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Folate, total",µg,56,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Folic acid",µg,0,--,--,0.0,0.0,--,--,--,--,"Assumed zero",--,01/2001
+"Folate, food",µg,56,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Folate, DFE",µg,56,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,05/2005
+"Vitamin B-12",µg,0.00,--,--,0.0,0.0,--,--,--,--,"Assumed zero",--,10/1989
+"Vitamin B-12, added",µg,0.00,--,--,0.0,0.0,--,--,--,--,"Assumed zero",--,09/2004
+"Vitamin A, RAE",µg,0,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,06/2002
+"Retinol",µg,0,--,--,0.0,0.0,--,--,--,--,"Assumed zero",--,06/2002
+"Vitamin A, IU",IU,0,--,--,0.0,0.0,--,--,--,--,"Calculated or imputed",--,10/1989
+"Vitamin D (D2 + D3)",µg,0.0,--,--,0.0,0.0,--,--,--,--,"Assumed zero",--,11/2008
+"Vitamin D",IU,0,--,--,0.0,0.0,--,--,--,--,"Assumed zero",--,02/2009
+Lipids
+"Fatty acids, total saturated",g,1.217,--,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"12:0",g,0.024,238,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"14:0",g,0.015,238,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"16:0",g,1.034,238,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"18:0",g,0.065,238,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Fatty acids, total monounsaturated",g,2.178,--,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"16:1 undifferentiated",g,0.013,238,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"18:1 undifferentiated",g,2.165,238,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Fatty acids, total polyunsaturated",g,2.535,--,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"18:2 undifferentiated",g,2.424,238,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"18:3 undifferentiated",g,0.111,238,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Cholesterol",mg,0,--,--,0.0,0.0,--,--,--,--,"Assumed zero",--,10/1989
+Amino Acids
+"Tryptophan",g,0.234,21,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Threonine",g,0.575,59,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Isoleucine",g,0.694,59,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Leucine",g,1.284,59,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Lysine",g,0.701,59,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Methionine",g,0.312,60,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Cystine",g,0.408,48,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Phenylalanine",g,0.895,58,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Tyrosine",g,0.573,43,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Valine",g,0.937,59,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Arginine",g,1.192,58,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Histidine",g,0.405,57,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Alanine",g,0.881,43,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Aspartic acid",g,1.448,43,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Glutamic acid",g,3.712,43,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Glycine",g,0.841,43,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Proline",g,0.934,41,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+"Serine",g,0.750,43,--,0.0,0.0,--,--,--,--,"Analytical or derived from analytical",--,10/1989
+Other
+"Alcohol, ethyl",g,0.0,--,--,0.0,0.0,--,--,--,--,"Assumed zero",--,10/1995
+Flavonoids
+Isoflavones
+"Daidzein",mg,0.00,2,--,0.0,0.0,--,--,--,--,--,--,--
+"Genistein",mg,0.00,2,--,0.0,0.0,--,--,--,--,--,--,--
+"Total isoflavones",mg,0.00,2,--,0.0,0.0,--,--,--,--,--,--,--
+Proanthocyanidin
+"Proanthocyanidin dimers",mg,0.0,2,--,0.0,0.0,--,--,--,--,--,--,--
+"Proanthocyanidin trimers",mg,0.0,2,--,0.0,0.0,--,--,--,--,--,--,--
+"Proanthocyanidin 4-6mers",mg,0.0,2,--,0.0,0.0,--,--,--,--,--,--,--
+"Proanthocyanidin 7-10mers",mg,0.0,2,--,0.0,0.0,--,--,--,--,--,--,--
+"Proanthocyanidin polymers (>10mers)",mg,0.0,2,--,0.0,0.0,--,--,--,--,--,--,--
+1,"Gu, L., Kelm, M.A., Hammerstone, J.F., Beecher, G., Holden, J., Haytowitz, D., Gebhardt, S., and Prior, R.L.","Screening foods containing proanthocyanidins and their structural characterization using LC-MS/MS and thiolytic degradation",2003,J. Agric. Food Chem.,51 pp. 7513-7513
+2,"Hellstr?m, T?rr?nen, A.R., and Matilla, P.H.","Proanthocyanidins in common food products of plant origin",2009,J. Agric. Food Chem.,57 pp. 7899-7899
+3,"Liggins, J., Mulligan, A., Runswick, S., and Bingham, S. A. ","Daidzein and genistein content of cereals.",2002,Euro. J. Clin. Nutr.,56 pp. 961-961
