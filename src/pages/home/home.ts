@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular/umd';
+import { NavController } from 'ionic-angular';
 import { FoodProvider } from '../../providers/food/food';
 import { tap, startWith, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
