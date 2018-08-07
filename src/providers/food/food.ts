@@ -38,26 +38,26 @@ export class FoodProvider {
     console.dir(nutrients)
     return {
       name: null,
-      energy: nutrients["Energy"],
-      water: nutrients["Water"],
-      protein: nutrients["Protein"],
+      energy: nutrients["Energy"] || math.unit(0, 'g'),
+      water: nutrients["Water"] || math.unit(0, 'g'),
+      protein: nutrients["Protein"] || math.unit(0, 'g'),
       lipids: {
-        saturated: nutrients["Fatty acids, total saturated"],
-        mono: nutrients["Fatty acids, total monounsaturated"],
-        poly: nutrients["Fatty acids, total polyunsaturated"],
+        saturated: nutrients["Fatty acids, total saturated"] || math.unit(0, 'g'),
+        mono: nutrients["Fatty acids, total monounsaturated"] || math.unit(0, 'g'),
+        poly: nutrients["Fatty acids, total polyunsaturated"] || math.unit(0, 'g'),
       },
       carbs: {
-        total: nutrients["Carbohydrate, by differenc"],
-        fiber: nutrients["Fiber, total dietary"],
-        sugar: nutrients["Sugars, total"],
+        total: nutrients["Carbohydrate, by difference"] || math.unit(0, 'g'),
+        fiber: nutrients["Fiber, total dietary"] || math.unit(0, 'g'),
+        sugar: nutrients["Sugars, total"] || math.unit(0, 'g'),
       },
-      vitamin_a: nutrients["Vitamin A, RAE"],
-      vitamin_b6: nutrients["Vitamin B-6"],
-      vitamin_c: nutrients["Vitamin C, total ascorbic acid"],
-      vitamin_d: nutrients["Vitamin D (D2 + D3)"],
-      calcium: nutrients["Calcium, Ca"],
-      iron: nutrients["Iron, Fe"],
-      magnesium: nutrients["Magnesium, Mg"]
+      vitamin_a: nutrients["Vitamin A, RAE"] || math.unit(0, 'g'),
+      vitamin_b6: nutrients["Vitamin B-6"] || math.unit(0, 'g'),
+      vitamin_c: nutrients["Vitamin C, total ascorbic acid"] || math.unit(0, 'g'),
+      vitamin_d: nutrients["Vitamin D (D2 + D3)"] || math.unit(0, 'g'),
+      calcium: nutrients["Calcium, Ca"] || math.unit(0, 'g'),
+      iron: nutrients["Iron, Fe"] || math.unit(0, 'g'),
+      magnesium: nutrients["Magnesium, Mg"] || math.unit(0, 'g')
     };
 
     function parseFoodLine(line): any {
