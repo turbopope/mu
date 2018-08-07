@@ -61,7 +61,7 @@ export class FoodProvider {
     };
 
     function parseFoodLine(line): any {
-      let [_, name, rest] = line.split(/"(.+)",(.+)/)
+      let [_, name, rest] = line.split(/"(.+?)",(.+)/)
       let [unit, value] = rest.split(',');
       unit = unit.replace('µg', 'ug');
       if (unit === 'IU') return {};

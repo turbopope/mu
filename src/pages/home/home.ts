@@ -14,7 +14,7 @@ import { Ingredient } from '../../app/model/ingredient';
 })
 export class HomePage {
 
-  public FOOD_KEYS = ['currants', /*'oats',*/ 'apples', 'chia_seeds', 'cashews', 'rice_milk'];
+  public FOOD_KEYS = ['currants', 'oats', 'apples', 'chia_seeds', 'cashews', 'rice_milk'];
   public NUTRITION_KEYS = [
     'amount',
     'energy',
