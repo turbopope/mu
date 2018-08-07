@@ -7,7 +7,6 @@ import { combineLatest } from 'rxjs';
 import * as math from 'mathjs';
 import { set, isObject } from 'lodash';
 import { Ingredient } from '../../app/model/ingredient';
-import { Food } from '../../app/model/food';
 
 @Component({
   selector: 'page-home',
@@ -21,5 +20,22 @@ export class HomePage {
   public amounts = this.FOOD_KEYS.reduce((amounts, foodKey) => set(amounts, foodKey, this.amountControllers[foodKey].valueChanges.pipe(startWith(0))), {});
   public ingredients = this.FOOD_KEYS.reduce((ingredients, foodName) => set(ingredients, foodName, combineLatest(this.foods[foodName], this.amounts[foodName]).pipe(map(([food, amount]) => new Ingredient(amount, food)))), {});
 
+  public energy = combineLatest(Object.values(this.ingredients)).pipe(
+    map(ingredients => ingredients.map(ingredient => ingredient['energy'])),
+    map(ingredients => this.sumUnits(ingredients))
+  );
+
   constructor(public navCtrl: NavController, private foodProvider: FoodProvider) {}
+
+  private sumUnits(units: math.Unit[]): math.Unit {
+    if (units.length === 0) {
+      return math.unit(0, 'g');
+    } else if (units.length === 1) {
+      return units[0];
+    } else if (units.length === 2) {
+      return math.add(units[0], units[1]) as math.Unit;
+    } else {
+      return math.add(units[0], this.sumUnits(units.slice(1))) as math.Unit;
+    }
+  }
 }
