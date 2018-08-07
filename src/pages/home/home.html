@@ -7,25 +7,24 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  <p *ngFor="let food of (foods | async)">
+    Why don't you eat 100 g {{ food.name }}? It's only {{ food.energy }}.
   </p>
 
   <p *ngIf="food | async as food">
-    Why don't you eat {{ food.name }}? It's only {{ food.energy }} kcal.
+    Why don't you eat {{ grams | async }} g of {{ food.name }}? It's only {{ energy | async }}.
   </p>
 
-  <!-- <p *ngIf="food | async as food">
-    Why don't you eat {{ grams }} g of {{ food.name }}? It's only {{ energy }} kcal.
-  </p> -->
+  <p>
+    Why don't you eat {{ grams | async }}.
+  </p>
 
-  <!-- <ion-item>
+  <ion-item>
     <ion-range min="0" max="200" step="5" [formControl]="gramControl">
       <ion-icon small range-left name="sunny"></ion-icon>
       <ion-icon range-right name="sunny"></ion-icon>
     </ion-range>
-  </ion-item> -->
+  </ion-item>
 
   <code><pre>{{food | async | json}}</pre></code>
 </ion-content>

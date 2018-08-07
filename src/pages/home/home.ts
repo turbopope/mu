@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular/umd';
 import { FoodProvider } from '../../providers/food/food';
-import { tap, startWith, map } from '../../../node_modules/rxjs/operators';
+import { tap, startWith, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
-import { combineLatest } from '../../../node_modules/rxjs';
+import { combineLatest } from 'rxjs';
 import * as math from 'mathjs';
 
 @Component({
@@ -16,17 +16,26 @@ export class HomePage {
 
   }
 
+  public foods = combineLatest(
+    this.foodProvider.getFood('currants'),
+    // this.foodProvider.getFood('oats'),
+    this.foodProvider.getFood('apples'),
+    this.foodProvider.getFood('chia_seeds'),
+    this.foodProvider.getFood('cashews'),
+    this.foodProvider.getFood('rice_milk'),
+  );
+
   public food = this.foodProvider.getFood('currants');
   
-  // public gramControl: FormControl = new FormControl();
+  public gramControl: FormControl = new FormControl();
 
-  // private grams = this.gramControl.valueChanges.pipe(
-  //   startWith(100),
-  //   tap(console.dir)
-  // );
-
-  // public energy = combineLatest(this.grams, this.food).pipe(
-  //   map(([grams, food]) => math.multiply(food.energy, grams))
-  // );
+  public grams = this.gramControl.valueChanges.pipe(
+    startWith(0),
+  );
+  
+  public energy = combineLatest(this.grams, this.food).pipe(
+    tap(console.dir),
+    map(([grams, food]) => math.multiply(food.energy, grams)),
+  );
 
 }
