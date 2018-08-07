@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Food } from '../../app/model/food';
-import { Observable } from '../../../node_modules/rxjs';
-import { map, tap } from '../../../node_modules/rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import * as math from 'mathjs';
 import { TextDecoder } from 'text-encoding';
 import { set } from 'lodash';
