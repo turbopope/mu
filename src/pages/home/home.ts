@@ -5,7 +5,9 @@ import { tap, startWith, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { combineLatest } from 'rxjs';
 import * as math from 'mathjs';
-import { set } from 'lodash';
+import { set, isObject } from 'lodash';
+import { Ingredient } from '../../app/model/ingredient';
+import { Food } from '../../app/model/food';
 
 @Component({
   selector: 'page-home',
@@ -18,22 +20,9 @@ export class HomePage {
   constructor(public navCtrl: NavController, private foodProvider: FoodProvider) {
   }
 
-  // public foods = combineLatest(this.FOOD_KEYS.map(this.foodProvider.getFood));
   public foods = this.FOOD_KEYS.reduce((foods, foodKey) => set(foods, foodKey, this.foodProvider.getFood(foodKey)), {});
   public amountControllers = this.FOOD_KEYS.reduce((controllers, foodKey) => set(controllers, foodKey, new FormControl()), {});
   public amounts = this.FOOD_KEYS.reduce((amounts, foodKey) => set(amounts, foodKey, this.amountControllers[foodKey].valueChanges.pipe(startWith(0))), {});
-
-  public food = this.foodProvider.getFood('currants');
-  
-  public gramControl: FormControl = new FormControl();
-
-  public grams = this.gramControl.valueChanges.pipe(
-    startWith(0),
-  );
-  
-  public energy = combineLatest(this.grams, this.food).pipe(
-    tap(console.dir),
-    map(([grams, food]) => math.multiply(food.energy, grams)),
-  );
+  public ingredients = this.FOOD_KEYS.reduce((ingredients, foodName) => set(ingredients, foodName, combineLatest(this.foods[foodName], this.amounts[foodName]).pipe(map(([food, amount]) => new Ingredient(amount, food)))), {});
 
 }
