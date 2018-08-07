@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { FoodProvider } from '../../providers/food/food';
 import { tap, startWith, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
-import { combineLatest } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import * as math from 'mathjs';
 import { set, isObject } from 'lodash';
 import { Ingredient } from '../../app/model/ingredient';
@@ -15,6 +15,22 @@ import { Ingredient } from '../../app/model/ingredient';
 export class HomePage {
 
   public FOOD_KEYS = ['currants', /*'oats',*/ 'apples', 'chia_seeds', 'cashews', 'rice_milk'];
+  public NUTRITION_KEYS = [
+    'amount',
+    'energy',
+    'water',
+    'protein',
+    'lipids',
+    'totalCarbs',
+    'calcium',
+    'magnesium',
+    'iron',
+    'vitamin_a',
+    'vitamin_b6',
+    'vitamin_c',
+    'vitamin_d',
+  ];
+
   public foods = this.FOOD_KEYS.reduce((foods, foodKey) => set(foods, foodKey, this.foodProvider.getFood(foodKey)), {});
   public amountControllers = this.FOOD_KEYS.reduce((controllers, foodKey) => set(controllers, foodKey, new FormControl()), {});
   public amounts = this.FOOD_KEYS.reduce((amounts, foodKey) => set(amounts, foodKey, this.amountControllers[foodKey].valueChanges.pipe(startWith(0))), {});
@@ -24,6 +40,14 @@ export class HomePage {
     map(ingredients => ingredients.map(ingredient => ingredient['energy'])),
     map(ingredients => this.sumUnits(ingredients))
   );
+
+  public nutrients = this.NUTRITION_KEYS.reduce((nutrients, nutrientKey) => set(nutrients, nutrientKey, this.nutrientObservable(nutrientKey)), {});
+  private nutrientObservable(nutrientKey: string): Observable<math.Unit> {
+    return combineLatest(Object.values(this.ingredients)).pipe(
+      map(ingredients => ingredients.map(ingredient => ingredient[nutrientKey])),
+      map(ingredients => this.sumUnits(ingredients))
+    );
+  }
 
   constructor(public navCtrl: NavController, private foodProvider: FoodProvider) {}
 

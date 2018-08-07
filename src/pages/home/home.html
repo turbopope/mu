@@ -34,6 +34,18 @@
   </ion-item>
 </ion-list>
 
-{{ energy | async | format }}
+<h1><small>{{ nutrients['amount'] | async | format }} g of </small>Super Duper Müsli</h1>
+<p>
+  {{ nutrients['energy'] | async | format }} 
+</p>
+<p>
+  {{ nutrients['water'] | async | format }} Water &middot; {{nutrients['protein'] | async | format}} Protein &middot; {{ nutrients['lipids'] | async | format }} Lipids &middot; {{ nutrients['totalCarbs'] | async | format }} Carbs
+</p>
+<p>
+  {{ nutrients['calcium'] | async | format }} Calcium &middot; {{nutrients['magnesium'] | async | format}} Magnesium &middot; {{ nutrients['iron'] | async | format }} Iron
+</p>
+<p>
+  {{ nutrients['vitamin_a'] | async | format }} Vitamin A &middot; {{nutrients['vitamin_b6'] | async | format}} Vitamin B6 &middot; {{ nutrients['vitamin_c'] | async | format }} Vitamin C &middot; {{ nutrients['vitamin_d'] | async | format }} Vitamin D
+</p>
   
 </ion-content>
