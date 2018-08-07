@@ -7,7 +7,24 @@
 </ion-header>
 
 <ion-content padding>
-  <p *ngFor="let food of (foods | async)">
+
+  <div *ngFor="let foodKey of FOOD_KEYS">
+    <p *ngIf="foods[foodKey] | async as food">
+        {{(amounts[foodKey] | async)}} g of <strong>{{food.name}}</strong>: {{food.energy}}, {{food.protein}} protein, {{food.water}} water
+      <ion-range min="0" max="200" step="5" [formControl]="amountControllers[foodKey]">
+        <ion-icon small range-left name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </p>
+    {{(amounts[foodKey] | async)}}
+  </div>
+  
+  <pre><code>
+      <!-- {{amounts | json}} -->
+  </code></pre>
+
+
+  <!-- <p *ngFor="let food of (foods | async)">
     Why don't you eat 100 g {{ food.name }}? It's only {{ food.energy }}.
   </p>
 
@@ -26,5 +43,5 @@
     </ion-range>
   </ion-item>
 
-  <code><pre>{{food | async | json}}</pre></code>
+  <code><pre>{{food | async | json}}</pre></code> -->
 </ion-content>
