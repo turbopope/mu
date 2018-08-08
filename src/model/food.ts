@@ -1,4 +1,4 @@
-import { Unit } from "mathjs";
+import { Unit, multiply } from "mathjs";
 import Utils from "../util/util";
 
 export class Food {
@@ -30,4 +30,5 @@ export class Food {
   
   public get lipidsTotal(): Unit { return Utils.sumUnits([this.lipids.saturated, this.lipids.mono, this.lipids.poly]) }
   public get carbsTotal(): Unit { return this.carbs.total }
+  public get otherCarbs(): Unit { return Utils.sumUnits([this.carbs.total, multiply(this.carbs.fiber, -1) as Unit, multiply(this.carbs.sugar, -1) as Unit]) }
 }

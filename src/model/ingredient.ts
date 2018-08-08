@@ -22,6 +22,7 @@ export class Ingredient {
   public get totalCarbs():      math.Unit { return math.multiply(this.food.carbs.total,      this.amount) as math.Unit; }
   public get fiber():           math.Unit { return math.multiply(this.food.carbs.fiber,      this.amount) as math.Unit; }
   public get sugar():           math.Unit { return math.multiply(this.food.carbs.sugar,      this.amount) as math.Unit; }
+  public get otherCarbs():      math.Unit { return math.multiply(this.food.otherCarbs,       this.amount) as math.Unit; }
   
   public get vitamin_a():       math.Unit { return math.multiply(this.food.vitamin_a,        this.amount) as math.Unit; }
   public get vitamin_b6():      math.Unit { return math.multiply(this.food.vitamin_b6,       this.amount) as math.Unit; }

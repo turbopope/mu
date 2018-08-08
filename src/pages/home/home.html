@@ -32,7 +32,7 @@
                   <ion-row>
                     <ion-col>
                       <p>
-                        1 g have:
+                        1 g has:
                         {{ ingredient.food.energy | format }},
                         {{ingredient.food.protein | format}} Protein,
                         {{ ingredient.food.lipidsTotal | format }} Lipids,
@@ -67,10 +67,26 @@
         <ion-col col-12 col-lg-6>
           <h1><small>{{ nutrients['amount'] | async | format }} g of </small>Super Duper Müsli</h1>
           <p>
-            {{ nutrients['energy'] | async | format }} 
+            
           </p>
           <p>
-            {{ nutrients['water'] | async | format }} Water &middot; {{nutrients['protein'] | async | format}} Protein &middot; {{ nutrients['lipids'] | async | format }} Lipids &middot; {{ nutrients['totalCarbs'] | async | format }} Carbs
+              {{ nutrients['energy'] | async | format }} &middot;
+              {{ nutrients['water'] | async | format }} Water &middot;
+              {{ nutrients['protein'] | async | format }} Protein
+          </p>
+          <p>
+              {{ nutrients['lipids'] | async | format }} Fat (
+                {{ nutrients['saturatedLipids'] | async | format }} Saturated Fat &middot;
+                {{ nutrients['polyLipids'] | async | format }} Monounsaturated Fat &middot;
+                {{ nutrients['monoLipids'] | async | format }} Polyunsaturated Fat
+              )
+          </p>
+          <p>
+              {{ nutrients['totalCarbs'] | async | format }} Carbs (
+                {{ nutrients['sugar'] | async | format }} Sugars &middot;
+                {{ nutrients['fiber'] | async | format }} Fibers &middot;
+                {{ nutrients['otherCarbs'] | async | format }} Other
+              )
           </p>
           <p>
             {{ nutrients['calcium'] | async | format }} Calcium &middot; {{nutrients['magnesium'] | async | format}} Magnesium &middot; {{ nutrients['iron'] | async | format }} Iron
@@ -83,3 +99,6 @@
     </ion-grid>
   </ion-content>
   
+
+<script src=""></script>
+<script></script>
