@@ -7,7 +7,7 @@ import { combineLatest, Observable } from 'rxjs';
 import * as math from 'mathjs';
 import { set, isObject } from 'lodash';
 import { Ingredient } from '../../model/ingredient';
-import { sumUnits } from '../../app/util/sumUnits';
+import Utils from '../../util/util';
 
 @Component({
   selector: 'page-home',
@@ -39,14 +39,14 @@ export class HomePage {
 
   public energy = combineLatest(Object.values(this.ingredients)).pipe(
     map(ingredients => ingredients.map(ingredient => ingredient['energy'])),
-    map(ingredients => sumUnits(ingredients))
+    map(ingredients => Utils.sumUnits(ingredients))
   );
 
   public nutrients = this.NUTRITION_KEYS.reduce((nutrients, nutrientKey) => set(nutrients, nutrientKey, this.nutrientObservable(nutrientKey)), {});
   private nutrientObservable(nutrientKey: string): Observable<math.Unit> {
     return combineLatest(Object.values(this.ingredients)).pipe(
       map(ingredients => ingredients.map(ingredient => ingredient[nutrientKey])),
-      map(ingredients => sumUnits(ingredients))
+      map(ingredients => Utils.sumUnits(ingredients))
     );
   }
 
