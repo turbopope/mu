@@ -1,5 +1,5 @@
 import { Unit } from "mathjs";
-import { sumUnits } from "../util/sumUnits";
+import Utils from "../util/util";
 
 export class Food {
   name: string;
@@ -28,6 +28,6 @@ export class Food {
     Object.assign(this, fields);
   }
   
-  public get lipidsTotal() { return sumUnits([this.lipids.saturated, this.lipids.mono, this.lipids.poly]) }
-  public get carbsTotal() { return this.carbs.total }
+  public get lipidsTotal(): Unit { return Utils.sumUnits([this.lipids.saturated, this.lipids.mono, this.lipids.poly]) }
+  public get carbsTotal(): Unit { return this.carbs.total }
 }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Food } from '../../app/model/food';
+import { Food } from '../../model/food';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import * as math from 'mathjs';

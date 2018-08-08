@@ -1,5 +1,4 @@
 import { Food } from "./food";
-import { Observable } from "../../../node_modules/rxjs";
 import * as math from 'mathjs';
 
 export class Ingredient {
