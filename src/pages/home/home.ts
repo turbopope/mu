@@ -6,7 +6,8 @@ import { FormControl } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import * as math from 'mathjs';
 import { set, isObject } from 'lodash';
-import { Ingredient } from '../../app/model/ingredient';
+import { Ingredient } from '../../model/ingredient';
+import { sumUnits } from '../../app/util/sumUnits';
 
 @Component({
   selector: 'page-home',
@@ -38,28 +39,17 @@ export class HomePage {
 
   public energy = combineLatest(Object.values(this.ingredients)).pipe(
     map(ingredients => ingredients.map(ingredient => ingredient['energy'])),
-    map(ingredients => this.sumUnits(ingredients))
+    map(ingredients => sumUnits(ingredients))
   );
 
   public nutrients = this.NUTRITION_KEYS.reduce((nutrients, nutrientKey) => set(nutrients, nutrientKey, this.nutrientObservable(nutrientKey)), {});
   private nutrientObservable(nutrientKey: string): Observable<math.Unit> {
     return combineLatest(Object.values(this.ingredients)).pipe(
       map(ingredients => ingredients.map(ingredient => ingredient[nutrientKey])),
-      map(ingredients => this.sumUnits(ingredients))
+      map(ingredients => sumUnits(ingredients))
     );
   }
 
   constructor(public navCtrl: NavController, private foodProvider: FoodProvider) {}
 
-  private sumUnits(units: math.Unit[]): math.Unit {
-    if (units.length === 0) {
-      return math.unit(0, 'g');
-    } else if (units.length === 1) {
-      return units[0];
-    } else if (units.length === 2) {
-      return math.add(units[0], units[1]) as math.Unit;
-    } else {
-      return math.add(units[0], this.sumUnits(units.slice(1))) as math.Unit;
-    }
-  }
 }
