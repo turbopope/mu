@@ -1,4 +1,5 @@
 import { Unit } from "mathjs";
+import { sumUnits } from "../util/sumUnits";
 
 export class Food {
   name: string;
@@ -22,4 +23,11 @@ export class Food {
   calcium: Unit;
   iron: Unit;
   magnesium: Unit;
+
+  constructor(fields: any) {
+    Object.assign(this, fields);
+  }
+  
+  public get lipidsTotal() { return sumUnits([this.lipids.saturated, this.lipids.mono, this.lipids.poly]) }
+  public get carbsTotal() { return this.carbs.total }
 }

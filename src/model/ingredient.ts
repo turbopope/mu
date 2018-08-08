@@ -18,7 +18,7 @@ export class Ingredient {
   public get saturatedLipids(): math.Unit { return math.multiply(this.food.lipids.saturated, this.amount) as math.Unit; }
   public get monoLipids():      math.Unit { return math.multiply(this.food.lipids.mono,      this.amount) as math.Unit; }
   public get polyLipids():      math.Unit { return math.multiply(this.food.lipids.poly,      this.amount) as math.Unit; }
-  public get lipids():          math.Unit { return math.add(this.saturatedLipids, math.add(this.monoLipids, this.polyLipids)) as math.Unit; }
+  public get lipids():          math.Unit { return math.multiply(this.food.lipidsTotal,      this.amount) as math.Unit; }
   
   public get totalCarbs():      math.Unit { return math.multiply(this.food.carbs.total,      this.amount) as math.Unit; }
   public get fiber():           math.Unit { return math.multiply(this.food.carbs.fiber,      this.amount) as math.Unit; }
