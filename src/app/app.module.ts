@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { GoalsPage } from '../pages/goals/goals';
 import { FoodProvider } from '../providers/food/food';
 import { FormatPipe } from '../pipes/format/format';
 
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MyApp,
     HomePage,
+    GoalsPage,
     FormatPipe
   ],
   imports: [
@@ -25,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    GoalsPage
   ],
   providers: [
     StatusBar,

@@ -8,6 +8,7 @@ import * as math from 'mathjs';
 import { set, isObject } from 'lodash';
 import { Ingredient } from '../../model/ingredient';
 import Utils from '../../util/util';
+import { GoalsPage } from '../goals/goals'
 
 @Component({
   selector: 'page-home',
@@ -58,4 +59,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private foodProvider: FoodProvider) {}
 
+  public goalsTapped(event) {
+    this.navCtrl.push(GoalsPage, {});
+  }
 }
