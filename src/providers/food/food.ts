@@ -36,7 +36,7 @@ export class FoodProvider {
                     .map(parseFoodLine)
                     .reduce((nutrient, nutrients) => Object.assign(nutrients, nutrient), {});
     console.dir(nutrients)
-    return {
+    return new Food({
       name: null,
       energy: nutrients["Energy"] || math.unit(0, 'g'),
       water: nutrients["Water"] || math.unit(0, 'g'),
@@ -58,7 +58,7 @@ export class FoodProvider {
       calcium: nutrients["Calcium, Ca"] || math.unit(0, 'g'),
       iron: nutrients["Iron, Fe"] || math.unit(0, 'g'),
       magnesium: nutrients["Magnesium, Mg"] || math.unit(0, 'g')
-    };
+    });
 
     function parseFoodLine(line): any {
       let [_, name, rest] = line.split(/"(.+?)",(.+)/)
