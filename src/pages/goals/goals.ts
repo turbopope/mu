@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { FormControl } from '@angular/forms';
 import { startWith, debounceTime } from 'rxjs/operators';
 import { from } from 'rxjs';
+import { GoalsProvider } from '../../providers/goals/goals';
 
 /**
  * Generated class for the GoalsPage page.
@@ -22,9 +23,9 @@ export class GoalsPage {
   public control = new FormControl();
   public amount = this.control.valueChanges;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
-    from(this.storage.get('amount')).subscribe(amount => this.control.setValue(amount || 11));
-    this.control.valueChanges.pipe(debounceTime(100)).subscribe(changed => storage.set('amount', changed))
+  constructor(public navCtrl: NavController, public navParams: NavParams, private goalsProvider: GoalsProvider) {
+    this.goalsProvider.getGoal().subscribe(goal => this.control.setValue(goal || 11));
+    this.control.valueChanges.pipe(debounceTime(100)).subscribe(goal => goalsProvider.setGoal(goal))
   }
 
 }

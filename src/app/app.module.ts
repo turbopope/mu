@@ -12,6 +12,7 @@ import { FoodProvider } from '../providers/food/food';
 import { FormatPipe } from '../pipes/format/format';
 
 import { HttpClientModule } from '@angular/common/http';
+import { GoalsProvider } from '../providers/goals/goals';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FoodProvider,
+    GoalsProvider,
   ]
 })
 export class AppModule {}
