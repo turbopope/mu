@@ -1,0 +1,22 @@
+let NUTRIENTS = [
+  'amount',
+  'energy',
+  'water',
+  'protein',
+  'lipids',
+  'saturatedLipids',
+  'monoLipids',
+  'polyLipids',
+  'totalCarbs',
+  'fiber',
+  'sugar',
+  'otherCarbs',
+  'calcium',
+  'magnesium',
+  'iron',
+  'vitamin_a',
+  'vitamin_b6',
+  'vitamin_c',
+  'vitamin_d',
+];
+export default NUTRIENTS;

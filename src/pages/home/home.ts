@@ -9,6 +9,7 @@ import { set, isObject } from 'lodash';
 import { Ingredient } from '../../model/ingredient';
 import Utils from '../../util/util';
 import { GoalsPage } from '../goals/goals'
+import NUTRIENTS from '../../providers/goals/nutrients';
 
 @Component({
   selector: 'page-home',
@@ -17,27 +18,6 @@ import { GoalsPage } from '../goals/goals'
 export class HomePage {
 
   public FOOD_KEYS = ['currants', 'oats', 'apples', 'chia_seeds', 'cashews', 'rice_milk'];
-  public NUTRITION_KEYS = [
-    'amount',
-    'energy',
-    'water',
-    'protein',
-    'lipids',
-    'saturatedLipids',
-    'monoLipids',
-    'polyLipids',
-    'totalCarbs',
-    'fiber',
-    'sugar',
-    'otherCarbs',
-    'calcium',
-    'magnesium',
-    'iron',
-    'vitamin_a',
-    'vitamin_b6',
-    'vitamin_c',
-    'vitamin_d',
-  ];
 
   public foods = this.FOOD_KEYS.reduce((foods, foodKey) => set(foods, foodKey, this.foodProvider.getFood(foodKey)), {});
   public amountControllers = this.FOOD_KEYS.reduce((controllers, foodKey) => set(controllers, foodKey, new FormControl()), {});
@@ -49,7 +29,7 @@ export class HomePage {
     map(ingredients => Utils.sumUnits(ingredients))
   );
 
-  public nutrients = this.NUTRITION_KEYS.reduce((nutrients, nutrientKey) => set(nutrients, nutrientKey, this.nutrientObservable(nutrientKey)), {});
+  public nutrients = NUTRIENTS.reduce((nutrients, nutrientKey) => set(nutrients, nutrientKey, this.nutrientObservable(nutrientKey)), {});
   private nutrientObservable(nutrientKey: string): Observable<math.Unit> {
     return combineLatest(Object.values(this.ingredients)).pipe(
       map(ingredients => ingredients.map(ingredient => ingredient[nutrientKey])),
