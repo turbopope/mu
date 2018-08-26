@@ -5,13 +5,7 @@ import { FormControl } from '@angular/forms';
 import { startWith, debounceTime } from 'rxjs/operators';
 import { from } from 'rxjs';
 import { GoalsProvider } from '../../providers/goals/goals';
-
-/**
- * Generated class for the GoalsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import NUTRIENTS from '../../providers/goals/nutrients';
 
 @IonicPage()
 @Component({
@@ -20,12 +14,18 @@ import { GoalsProvider } from '../../providers/goals/goals';
 })
 export class GoalsPage {
 
-  public control = new FormControl();
-  public amount = this.control.valueChanges;
+  public nuts = NUTRIENTS;
+
+  public caloriesController = new FormControl();
+  public calories = this.caloriesController.valueChanges;
+
+  public getNutrient(key, calories) {
+    return this.goalsProvider.getNutrient(key, calories);
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private goalsProvider: GoalsProvider) {
-    this.goalsProvider.getGoal().subscribe(goal => this.control.setValue(goal || 11));
-    this.control.valueChanges.pipe(debounceTime(100)).subscribe(goal => goalsProvider.setGoal(goal))
+    this.goalsProvider.getCalories().subscribe(goal => this.caloriesController.setValue(goal || 2000));
+    this.calories.pipe(debounceTime(10)).subscribe(goal => goalsProvider.setCalories(goal));
   }
 
 }
