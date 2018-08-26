@@ -3,10 +3,11 @@
     <ion-title>
       Mü
     </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  <button ion-button (click)="goalsTapped($event)">Goals</button>
   
   
   <ion-grid>
@@ -26,84 +27,75 @@
                   </ion-col>
                   <ion-col col-6>
                     <ion-range class="mu-remove-padding" min="0" max="200" step="5" [formControl]="amountControllers[foodKey]">
-                      </ion-range>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                      <p>
-                        1 g has:
-                        {{ ingredient.food.energy | format }},
-                        {{ingredient.food.protein | format}} Protein,
-                        {{ ingredient.food.lipidsTotal | format }} Lipids,
-                        {{ ingredient.food.carbsTotal | format }} Carbs &middot;
-                      </p>
-                      <!-- <p>
-                        {{ ingredient.food.carbs | format }} Carbs
-                      </p>
-                      <p>
-                        {{ ingredient.food.energy | format }} &middot; {{ ingredient.food.water | format }} Water &middot; {{ingredient.food.protein | format}} Protein
-                      </p>
-                      <p>
-                        {{ ingredient.food.calcium | format }} Calcium &middot; {{ingredient.food.magnesium | format}} Magnesium &middot; {{ ingredient.food.iron | format }} Iron
-                      </p>
-                      <p>
-                        {{ ingredient.food.vitamin_a | format }} Vitamin A &middot; {{ingredient.food.vitamin_b6 | format}} Vitamin B6 &middot; {{ ingredient.food.vitamin_c | format }} Vitamin C &middot; {{ ingredient.food.vitamin_d | format }} Vitamin D
-                      </p> -->
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-                
-                
-                <!-- <ion-range min="0" max="200" step="5" [formControl]="amountControllers[foodKey]">
-                  <ion-icon small range-left name="cafe"></ion-icon>
-                  <ion-icon range-right name="cafe"></ion-icon>
-                </ion-range> -->
-                <!-- <code><pre>{{ ingredient.food | json }}</pre></code> -->
-              </div>
-            </ion-item>
-          </ion-list>
-        </ion-col>
-        <ion-col col-12 col-lg-6>
-          <h1><small>{{ nutrients['amount'] | async | format }} g of </small>Super Duper Müsli</h1>
-          <p>
-            
-          </p>
-          <p>
-              {{ nutrients['energy'] | async | format }} &middot;
-              {{ nutrients['water'] | async | format }} Water &middot;
-              {{ nutrients['protein'] | async | format }} Protein
-          </p>
-          <p>
-              {{ nutrients['lipids'] | async | format }} Fat (
-                {{ nutrients['saturatedLipids'] | async | format }} Saturated Fat &middot;
-                {{ nutrients['polyLipids'] | async | format }} Monounsaturated Fat &middot;
-                {{ nutrients['monoLipids'] | async | format }} Polyunsaturated Fat
-              )
-          </p>
-          <p>
-              {{ nutrients['totalCarbs'] | async | format }} Carbs (
-                {{ nutrients['sugar'] | async | format }} Sugars &middot;
-                {{ nutrients['fiber'] | async | format }} Fibers &middot;
-                {{ nutrients['otherCarbs'] | async | format }} Other
-              )
-          </p>
-          <p>
-            {{ nutrients['calcium'] | async | format }} Calcium &middot; {{nutrients['magnesium'] | async | format}} Magnesium &middot; {{ nutrients['iron'] | async | format }} Iron
-          </p>
-          <p>
-            {{ nutrients['vitamin_a'] | async | format }} Vitamin A &middot; {{nutrients['vitamin_b6'] | async | format}} Vitamin B6 &middot; {{ nutrients['vitamin_c'] | async | format }} Vitamin C &middot; {{ nutrients['vitamin_d'] | async | format }} Vitamin D
-          </p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <button ion-button (click)="goalsTapped($event)">Goals</button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-content>
-  
-
-<script src=""></script>
-<script></script>
+                    </ion-range>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <p>
+                      1 g has:
+                      {{ ingredient.food.energy | format }},
+                      {{ingredient.food.protein | format}} Protein,
+                      {{ ingredient.food.lipidsTotal | format }} Lipids,
+                      {{ ingredient.food.carbsTotal | format }} Carbs &middot;
+                    </p>
+                    <!-- <p>
+                      {{ ingredient.food.carbs | format }} Carbs
+                    </p>
+                    <p>
+                      {{ ingredient.food.energy | format }} &middot; {{ ingredient.food.water | format }} Water &middot; {{ingredient.food.protein | format}} Protein
+                    </p>
+                    <p>
+                      {{ ingredient.food.calcium | format }} Calcium &middot; {{ingredient.food.magnesium | format}} Magnesium &middot; {{ ingredient.food.iron | format }} Iron
+                    </p>
+                    <p>
+                      {{ ingredient.food.vitamin_a | format }} Vitamin A &middot; {{ingredient.food.vitamin_b6 | format}} Vitamin B6 &middot; {{ ingredient.food.vitamin_c | format }} Vitamin C &middot; {{ ingredient.food.vitamin_d | format }} Vitamin D
+                    </p> -->
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              
+              
+              <!-- <ion-range min="0" max="200" step="5" [formControl]="amountControllers[foodKey]">
+                <ion-icon small range-left name="cafe"></ion-icon>
+                <ion-icon range-right name="cafe"></ion-icon>
+              </ion-range> -->
+              <!-- <code><pre>{{ ingredient.food | json }}</pre></code> -->
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-12 col-lg-6>
+        <h1><small>{{ nutrients['amount'] | async | format }} g of </small>Super Duper Müsli</h1>
+        <p>
+          
+        </p>
+        <p>
+          {{ nutrients['energy'] | async | format }} &middot;
+          {{ nutrients['water'] | async | format }} Water &middot;
+          {{ nutrients['protein'] | async | format }} Protein
+        </p>
+        <p>
+          {{ nutrients['lipids'] | async | format }} Fat (
+          {{ nutrients['saturatedLipids'] | async | format }} Saturated Fat &middot;
+          {{ nutrients['polyLipids'] | async | format }} Monounsaturated Fat &middot;
+          {{ nutrients['monoLipids'] | async | format }} Polyunsaturated Fat
+          )
+        </p>
+        <p>
+          {{ nutrients['totalCarbs'] | async | format }} Carbs (
+          {{ nutrients['sugar'] | async | format }} Sugars &middot;
+          {{ nutrients['fiber'] | async | format }} Fibers &middot;
+          {{ nutrients['otherCarbs'] | async | format }} Other
+          )
+        </p>
+        <p>
+          {{ nutrients['calcium'] | async | format }} Calcium &middot; {{nutrients['magnesium'] | async | format}} Magnesium &middot; {{ nutrients['iron'] | async | format }} Iron
+        </p>
+        <p>
+          {{ nutrients['vitamin_a'] | async | format }} Vitamin A &middot; {{nutrients['vitamin_b6'] | async | format}} Vitamin B6 &middot; {{ nutrients['vitamin_c'] | async | format }} Vitamin C &middot; {{ nutrients['vitamin_d'] | async | format }} Vitamin D
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
