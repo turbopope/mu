@@ -35,7 +35,6 @@ export class FoodProvider {
                     .filter(line => line.startsWith('"'))
                     .map(parseFoodLine)
                     .reduce((nutrient, nutrients) => Object.assign(nutrients, nutrient), {});
-    console.dir(nutrients)
     return new Food({
       name: null,
       energy: nutrients["Energy"] || math.unit(0, 'g'),
