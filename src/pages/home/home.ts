@@ -10,6 +10,7 @@ import { Ingredient } from '../../model/ingredient';
 import Utils from '../../util/util';
 import { GoalsPage } from '../goals/goals'
 import NUTRIENTS from '../../providers/goals/nutrients';
+import { GoalsProvider } from '../../providers/goals/goals';
 
 @Component({
   selector: 'page-home',
@@ -37,9 +38,11 @@ export class HomePage {
     );
   }
 
-  constructor(public navCtrl: NavController, private foodProvider: FoodProvider) {}
+  constructor(public navCtrl: NavController, private foodProvider: FoodProvider, public goalsProvider: GoalsProvider) {}
 
   public goalsTapped(event) {
     this.navCtrl.push(GoalsPage, {});
   }
+
+  public proteinGoal = this.goalsProvider.nutrientGoals['protein'];
 }

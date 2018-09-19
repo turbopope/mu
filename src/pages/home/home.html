@@ -95,6 +95,9 @@
         <p>
           {{ nutrients['vitamin_a'] | async | format }} Vitamin A &middot; {{nutrients['vitamin_b6'] | async | format}} Vitamin B6 &middot; {{ nutrients['vitamin_c'] | async | format }} Vitamin C &middot; {{ nutrients['vitamin_d'] | async | format }} Vitamin D
         </p>
+        <p>
+          Protein Goal: {{ proteinGoal | async }}
+        </p>
       </ion-col>
     </ion-row>
   </ion-grid>

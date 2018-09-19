@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, AfterViewInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Observable, from, merge, of, Subject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, take } from 'rxjs/operators';
+import NUTRIENTS from '../../providers/goals/nutrients';
+import { set, isObject } from 'lodash';
 
 @Injectable()
 export class GoalsProvider {
@@ -28,11 +30,20 @@ export class GoalsProvider {
 
   constructor(private storage: Storage) {}
 
-  public getCalories() { return from(this.storage.get('calories')); }
-  public setCalories(calories: number) { 
+  public  getCaloriesFromStorage = () => from(this.storage.get('calories')).pipe(take(1));
+  private setCaloriesSubject = new Subject();
+
+  public caloriesGoal = merge(this.getCaloriesFromStorage(), this.setCaloriesSubject);
+
+  public setCalories(calories: number) {
     this.storage.set('calories', calories);
+    this.setCaloriesSubject.next(calories);
   }
 
-  public getNutrient(key, calories) { return calories * this.NUTRIENT_FACTORS[key]; }
+  public getNutrient(key, calories) {
+    return calories * this.NUTRIENT_FACTORS[key];
+  }
+
+  public nutrientGoals = NUTRIENTS.reduce((nutrientGoals, nutrient) => set(nutrientGoals, nutrient, this.caloriesGoal.pipe(map(calories => calories * this.NUTRIENT_FACTORS[nutrient]))), {});
 
 }
