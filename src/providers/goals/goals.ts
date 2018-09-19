@@ -4,6 +4,7 @@ import { Observable, from, merge, of, Subject } from 'rxjs';
 import { map, tap, take } from 'rxjs/operators';
 import NUTRIENTS from '../../providers/goals/nutrients';
 import { set, isObject } from 'lodash';
+import * as math from 'mathjs';
 
 @Injectable()
 export class GoalsProvider {
@@ -44,6 +45,6 @@ export class GoalsProvider {
     return calories * this.NUTRIENT_FACTORS[key];
   }
 
-  public nutrientGoals = NUTRIENTS.reduce((nutrientGoals, nutrient) => set(nutrientGoals, nutrient, this.caloriesGoal.pipe(map(calories => calories * this.NUTRIENT_FACTORS[nutrient]))), {});
+  public nutrientGoals = NUTRIENTS.reduce((nutrientGoals, nutrient) => set(nutrientGoals, nutrient, this.caloriesGoal.pipe(map(calories => math.unit(calories * this.NUTRIENT_FACTORS[nutrient], 'g')))), {});
 
 }
