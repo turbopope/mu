@@ -44,5 +44,6 @@ export class HomePage {
     this.navCtrl.push(GoalsPage, {});
   }
 
-  public proteinGoal = this.goalsProvider.nutrientGoals['protein'];
+  public goals = this.goalsProvider.nutrientGoals;
+  public caloriesGoal = this.goalsProvider.caloriesGoal.pipe(map(goal => math.unit(goal, 'kcal')))
 }

@@ -71,32 +71,29 @@
           
         </p>
         <p>
-          {{ nutrients['energy'] | async | format }} &middot;
-          {{ nutrients['water'] | async | format }} Water &middot;
-          {{ nutrients['protein'] | async | format }} Protein
+          {{ nutrients['energy'] | async | format }}/{{ caloriesGoal | async | format }} &middot;
+          {{ nutrients['water'] | async | format }}/{{ goals['water'] | async | format }} Water &middot;
+          {{ nutrients['protein'] | async | format }}/{{ goals['protein'] | async | format }} Protein
         </p>
         <p>
-          {{ nutrients['lipids'] | async | format }} Fat (
-          {{ nutrients['saturatedLipids'] | async | format }} Saturated Fat &middot;
-          {{ nutrients['polyLipids'] | async | format }} Monounsaturated Fat &middot;
-          {{ nutrients['monoLipids'] | async | format }} Polyunsaturated Fat
+          {{ nutrients['lipids'] | async | format }}/{{ goals['lipids'] | async | format }} Fat (
+          {{ nutrients['saturatedLipids'] | async | format }}/{{ goals['saturatedLipids'] | async | format }} Saturated Fat &middot;
+          {{ nutrients['monoLipids'] | async | format }}/{{ goals['monoLipids'] | async | format }} Monounsaturated Fat &middot;
+          {{ nutrients['polyLipids'] | async | format }}/{{ goals['polyLipids'] | async | format }} Polyunsaturated Fat
           )
         </p>
         <p>
-          {{ nutrients['totalCarbs'] | async | format }} Carbs (
-          {{ nutrients['sugar'] | async | format }} Sugars &middot;
-          {{ nutrients['fiber'] | async | format }} Fibers &middot;
-          {{ nutrients['otherCarbs'] | async | format }} Other
+          {{ nutrients['totalCarbs'] | async | format }}/{{ goals['totalCarbs'] | async | format }} Carbs (
+          {{ nutrients['sugar'] | async | format }}/{{ goals['sugar'] | async | format }} Sugars &middot;
+          {{ nutrients['fiber'] | async | format }}/{{ goals['fiber'] | async | format }} Fibers &middot;
+          {{ nutrients['otherCarbs'] | async | format }}/{{ goals['otherCarbs'] | async | format }} Other
           )
         </p>
         <p>
-          {{ nutrients['calcium'] | async | format }} Calcium &middot; {{nutrients['magnesium'] | async | format}} Magnesium &middot; {{ nutrients['iron'] | async | format }} Iron
+          {{ nutrients['calcium'] | async | format }}/{{ goals['calcium'] | async | format }} Calcium &middot; {{nutrients['magnesium'] | async | format}}/{{ goals['magnesium'] | async | format }} Magnesium &middot; {{ nutrients['iron'] | async | format }}/{{ goals['iron'] | async | format }} Iron
         </p>
         <p>
-          {{ nutrients['vitamin_a'] | async | format }} Vitamin A &middot; {{nutrients['vitamin_b6'] | async | format}} Vitamin B6 &middot; {{ nutrients['vitamin_c'] | async | format }} Vitamin C &middot; {{ nutrients['vitamin_d'] | async | format }} Vitamin D
-        </p>
-        <p>
-          Protein Goal: {{ proteinGoal | async }}
+          {{ nutrients['vitamin_a'] | async | format }}/{{ goals['vitamin_a'] | async | format }} Vitamin A &middot; {{nutrients['vitamin_b6'] | async | format}}/{{ goals['vitamin_b6'] | async | format }} Vitamin B6 &middot; {{ nutrients['vitamin_c'] | async | format }}/{{ goals['vitamin_c'] | async | format }} Vitamin C &middot; {{ nutrients['vitamin_d'] | async | format }}/{{ goals['vitamin_d'] | async | format }} Vitamin D
         </p>
       </ion-col>
     </ion-row>
