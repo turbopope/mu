@@ -1,7 +1,7 @@
 import { Food } from "./food";
 import * as math from 'mathjs';
 
-export class Ingredient {
+export class AmountedFood {
   amount: number;
   food: Food;
 

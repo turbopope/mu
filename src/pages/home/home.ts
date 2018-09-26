@@ -6,7 +6,7 @@ import { FormControl } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import * as math from 'mathjs';
 import { set, isObject } from 'lodash';
-import { Ingredient } from '../../model/ingredient';
+import { AmountedFood } from '../../model/amounted-food';
 import Utils from '../../util/util';
 import { GoalsPage } from '../goals/goals'
 import NUTRIENTS from '../../util/nutrients';
@@ -23,7 +23,7 @@ export class HomePage {
   public foods = this.FOOD_KEYS.reduce((foods, foodKey) => set(foods, foodKey, this.foodProvider.getFood(foodKey)), {});
   public amountControllers = this.FOOD_KEYS.reduce((controllers, foodKey) => set(controllers, foodKey, new FormControl()), {});
   public amounts = this.FOOD_KEYS.reduce((amounts, foodKey) => set(amounts, foodKey, this.amountControllers[foodKey].valueChanges.pipe(startWith(0))), {});
-  public ingredients = this.FOOD_KEYS.reduce((ingredients, foodName) => set(ingredients, foodName, combineLatest(this.foods[foodName], this.amounts[foodName]).pipe(map(([food, amount]) => new Ingredient(amount, food)))), {});
+  public ingredients = this.FOOD_KEYS.reduce((ingredients, foodName) => set(ingredients, foodName, combineLatest(this.foods[foodName], this.amounts[foodName]).pipe(map(([food, amount]) => new AmountedFood(amount, food)))), {});
 
   public energy = combineLatest(Object.values(this.ingredients)).pipe(
     map(ingredients => ingredients.map(ingredient => ingredient['energy'])),
