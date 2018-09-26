@@ -1,4 +1,6 @@
-let NUTRIENTS = [
+import { math } from './math';
+
+export const NUTRIENTS = [
   'amount',
   'energy',
   'water',
@@ -19,4 +21,23 @@ let NUTRIENTS = [
   'vitamin_c',
   'vitamin_d',
 ];
-export default NUTRIENTS;
+
+export const NUTRIENT_GOALS = {
+  'water':           math.unit(2 / 2000,       'L'),
+  'protein':         math.unit(50 / 2000,      'g'),
+  'lipids':          math.unit(65 / 2000,      'g'),
+  'saturatedLipids': math.unit(20 / 2000,      'g'),
+  'monoLipids':      math.unit(25 / 2000,      'g'),
+  'polyLipids':      math.unit(20 / 2000,      'g'),
+  'totalCarbs':      math.unit(300 / 2000,     'g'),
+  'fiber':           math.unit(25 / 2000,      'g'),
+  'sugar':           math.unit(25 / 2000,      'g'),
+  'otherCarbs':      math.unit(250 / 2000,     'g'),
+  'calcium':         math.unit(1000 / 2000,    'mg'),
+  'magnesium':       math.unit(400 / 2000,     'mg'),
+  'iron':            math.unit(8 / 2000,       'mg'),
+  'vitamin_a':       math.unit(800 / 2000,     'mg'),
+  'vitamin_b6':      math.unit(2 / 2000,       'mg'),
+  'vitamin_c':       math.unit(90 / 2000,      'mg'),
+  'vitamin_d':       math.unit(600 /40 / 2000, 'ug'),
+}

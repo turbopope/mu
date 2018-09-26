@@ -9,7 +9,7 @@ import { set, isObject } from 'lodash';
 import { AmountedFood } from '../../model/amounted-food';
 import Utils from '../../util/util';
 import { GoalsPage } from '../goals/goals'
-import NUTRIENTS from '../../util/nutrients';
+import { NUTRIENTS } from '../../util/nutrients';
 import { GoalsProvider } from '../../providers/goals/goals';
 
 @Component({
