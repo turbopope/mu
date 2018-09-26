@@ -11,7 +11,6 @@ import { set } from 'lodash';
 export class FoodProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello FoodProvider Provider');
     math.createUnit('kcal', '4184 J')
   }
   
