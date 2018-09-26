@@ -9,24 +9,24 @@ import { math, Unit } from '../../util/math';
 @Injectable()
 export class GoalsProvider {
 
-  public NUTRIENT_FACTORS = {
-    'water':           0,
-    'protein':         50 / 2000,
-    'lipids':          65 / 2000,
-    'saturatedLipids': 20 / 2000,
-    'monoLipids':      0,
-    'polyLipids':      0,
-    'totalCarbs':      300 / 2000,
-    'fiber':           25 / 2000,
-    'sugar':           0,
-    'otherCarbs':      0,
-    'calcium':         60 / 2000,
-    'magnesium':       400 / 2000,
-    'iron':            18 / 2000,
-    'vitamin_a':       5000 / 2000,
-    'vitamin_b6':      2 / 2000,
-    'vitamin_c':       60 / 2000,
-    'vitamin_d':       400 / 2000
+  public NUTRIENT_GOALS = {
+    'water':           math.unit(2 / 2000,       'L'),
+    'protein':         math.unit(50 / 2000,      'g'),
+    'lipids':          math.unit(65 / 2000,      'g'),
+    'saturatedLipids': math.unit(20 / 2000,      'g'),
+    'monoLipids':      math.unit(25 / 2000,      'g'),
+    'polyLipids':      math.unit(20 / 2000,      'g'),
+    'totalCarbs':      math.unit(300 / 2000,     'g'),
+    'fiber':           math.unit(25 / 2000,      'g'),
+    'sugar':           math.unit(25 / 2000,      'g'),
+    'otherCarbs':      math.unit(250 / 2000,     'g'),
+    'calcium':         math.unit(1000 / 2000,    'mg'),
+    'magnesium':       math.unit(400 / 2000,     'mg'),
+    'iron':            math.unit(8 / 2000,       'mg'),
+    'vitamin_a':       math.unit(800 / 2000,     'mg'),
+    'vitamin_b6':      math.unit(2 / 2000,       'mg'),
+    'vitamin_c':       math.unit(90 / 2000,      'mg'),
+    'vitamin_d':       math.unit(600 /40 / 2000, 'ug'),
   }
 
   constructor(private storage: Storage) {}
@@ -41,10 +41,10 @@ export class GoalsProvider {
     this.setCaloriesSubject.next(calories);
   }
 
-  public getNutrient(key, calories) {
-    return calories * this.NUTRIENT_FACTORS[key];
+  public getNutrient(key: string, calories: number): Unit {
+    return math.multiply(this.NUTRIENT_GOALS[key] as Unit, calories) as Unit;
   }
 
-  public nutrientGoals = NUTRIENTS.reduce((nutrientGoals, nutrient) => set(nutrientGoals, nutrient, this.caloriesGoal.pipe(map(calories => math.unit(calories * this.NUTRIENT_FACTORS[nutrient], 'g')))), {});
+  public nutrientGoals = NUTRIENTS.reduce((nutrientGoals, nutrient) => set(nutrientGoals, nutrient, this.caloriesGoal.pipe(map(calories => this.getNutrient(nutrient, calories)))), {});
 
 }
