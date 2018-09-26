@@ -18,7 +18,7 @@ import { GoalsProvider } from '../../providers/goals/goals';
 })
 export class HomePage {
 
-  public FOOD_KEYS = ['currants', 'oats', 'apples', 'chia_seeds', 'cashews', 'rice_milk'];
+  public FOOD_KEYS = ['currants', 'oats', 'apples', 'chia_seeds', 'cashews', 'rice_milk', 'flax_seeds'];
 
   public foods = this.FOOD_KEYS.reduce((foods, foodKey) => set(foods, foodKey, this.foodProvider.getFood(foodKey)), {});
   public amountControllers = this.FOOD_KEYS.reduce((controllers, foodKey) => set(controllers, foodKey, new FormControl()), {});
