@@ -2,7 +2,7 @@ import { Injectable, AfterViewInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Observable, from, merge, of, Subject } from 'rxjs';
 import { map, tap, take } from 'rxjs/operators';
-import NUTRIENTS from '../../providers/goals/nutrients';
+import NUTRIENTS from '../../util/nutrients';
 import { set, isObject } from 'lodash';
 import * as math from 'mathjs';
 

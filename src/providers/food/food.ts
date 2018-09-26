@@ -7,12 +7,6 @@ import * as math from 'mathjs';
 import { TextDecoder } from 'text-encoding';
 import { set } from 'lodash';
 
-/*
-  Generated class for the FoodProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class FoodProvider {
 

@@ -5,7 +5,7 @@ import { FormControl } from '@angular/forms';
 import { startWith, debounceTime } from 'rxjs/operators';
 import { from } from 'rxjs';
 import { GoalsProvider } from '../../providers/goals/goals';
-import NUTRIENTS from '../../providers/goals/nutrients';
+import NUTRIENTS from '../../util/nutrients';
 
 @IonicPage()
 @Component({
