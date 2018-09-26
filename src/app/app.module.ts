@@ -9,7 +9,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { GoalsPage } from '../pages/goals/goals';
 import { FoodProvider } from '../providers/food/food';
-import { FormatPipe } from '../pipes/format/format';
+import { UnitPipe } from '../pipes/unit/unit';
 
 import { HttpClientModule } from '@angular/common/http';
 import { GoalsProvider } from '../providers/goals/goals';
@@ -19,7 +19,7 @@ import { GoalsProvider } from '../providers/goals/goals';
     MyApp,
     HomePage,
     GoalsPage,
-    FormatPipe
+    UnitPipe
   ],
   imports: [
     BrowserModule,

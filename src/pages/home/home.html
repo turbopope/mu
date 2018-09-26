@@ -34,22 +34,22 @@
                   <ion-col>
                     <p>
                       1 g has:
-                      {{ ingredient.food.energy | format }},
-                      {{ingredient.food.protein | format}} Protein,
-                      {{ ingredient.food.lipidsTotal | format }} Lipids,
-                      {{ ingredient.food.carbsTotal | format }} Carbs &middot;
+                      {{ ingredient.food.energy | unit }},
+                      {{ingredient.food.protein | unit}} Protein,
+                      {{ ingredient.food.lipidsTotal | unit }} Lipids,
+                      {{ ingredient.food.carbsTotal | unit }} Carbs &middot;
                     </p>
                     <!-- <p>
-                      {{ ingredient.food.carbs | format }} Carbs
+                      {{ ingredient.food.carbs | unit }} Carbs
                     </p>
                     <p>
-                      {{ ingredient.food.energy | format }} &middot; {{ ingredient.food.water | format }} Water &middot; {{ingredient.food.protein | format}} Protein
+                      {{ ingredient.food.energy | unit }} &middot; {{ ingredient.food.water | unit }} Water &middot; {{ingredient.food.protein | unit}} Protein
                     </p>
                     <p>
-                      {{ ingredient.food.calcium | format }} Calcium &middot; {{ingredient.food.magnesium | format}} Magnesium &middot; {{ ingredient.food.iron | format }} Iron
+                      {{ ingredient.food.calcium | unit }} Calcium &middot; {{ingredient.food.magnesium | unit}} Magnesium &middot; {{ ingredient.food.iron | unit }} Iron
                     </p>
                     <p>
-                      {{ ingredient.food.vitamin_a | format }} Vitamin A &middot; {{ingredient.food.vitamin_b6 | format}} Vitamin B6 &middot; {{ ingredient.food.vitamin_c | format }} Vitamin C &middot; {{ ingredient.food.vitamin_d | format }} Vitamin D
+                      {{ ingredient.food.vitamin_a | unit }} Vitamin A &middot; {{ingredient.food.vitamin_b6 | unit}} Vitamin B6 &middot; {{ ingredient.food.vitamin_c | unit }} Vitamin C &middot; {{ ingredient.food.vitamin_d | unit }} Vitamin D
                     </p> -->
                   </ion-col>
                 </ion-row>
@@ -66,34 +66,34 @@
         </ion-list>
       </ion-col>
       <ion-col col-12 col-lg-6>
-        <h1><small>{{ nutrients['amount'] | async | format }} g of </small>Super Duper Müsli</h1>
+        <h1><small>{{ nutrients['amount'] | async | unit }} g of </small>Super Duper Müsli</h1>
         <p>
           
         </p>
         <p>
-          {{ nutrients['energy'] | async | format }}/{{ caloriesGoal | async | format }} &middot;
-          {{ nutrients['water'] | async | format }}/{{ goals['water'] | async | format }} Water &middot;
-          {{ nutrients['protein'] | async | format }}/{{ goals['protein'] | async | format }} Protein
+          {{ nutrients['energy'] | async | unit }}/{{ caloriesGoal | async | unit }} &middot;
+          {{ nutrients['water'] | async | unit }}/{{ goals['water'] | async | unit }} Water &middot;
+          {{ nutrients['protein'] | async | unit }}/{{ goals['protein'] | async | unit }} Protein
         </p>
         <p>
-          {{ nutrients['lipids'] | async | format }}/{{ goals['lipids'] | async | format }} Fat (
-          {{ nutrients['saturatedLipids'] | async | format }}/{{ goals['saturatedLipids'] | async | format }} Saturated Fat &middot;
-          {{ nutrients['monoLipids'] | async | format }}/{{ goals['monoLipids'] | async | format }} Monounsaturated Fat &middot;
-          {{ nutrients['polyLipids'] | async | format }}/{{ goals['polyLipids'] | async | format }} Polyunsaturated Fat
+          {{ nutrients['lipids'] | async | unit }}/{{ goals['lipids'] | async | unit }} Fat (
+          {{ nutrients['saturatedLipids'] | async | unit }}/{{ goals['saturatedLipids'] | async | unit }} Saturated Fat &middot;
+          {{ nutrients['monoLipids'] | async | unit }}/{{ goals['monoLipids'] | async | unit }} Monounsaturated Fat &middot;
+          {{ nutrients['polyLipids'] | async | unit }}/{{ goals['polyLipids'] | async | unit }} Polyunsaturated Fat
           )
         </p>
         <p>
-          {{ nutrients['totalCarbs'] | async | format }}/{{ goals['totalCarbs'] | async | format }} Carbs (
-          {{ nutrients['sugar'] | async | format }}/{{ goals['sugar'] | async | format }} Sugars &middot;
-          {{ nutrients['fiber'] | async | format }}/{{ goals['fiber'] | async | format }} Fibers &middot;
-          {{ nutrients['otherCarbs'] | async | format }}/{{ goals['otherCarbs'] | async | format }} Other
+          {{ nutrients['totalCarbs'] | async | unit }}/{{ goals['totalCarbs'] | async | unit }} Carbs (
+          {{ nutrients['sugar'] | async | unit }}/{{ goals['sugar'] | async | unit }} Sugars &middot;
+          {{ nutrients['fiber'] | async | unit }}/{{ goals['fiber'] | async | unit }} Fibers &middot;
+          {{ nutrients['otherCarbs'] | async | unit }}/{{ goals['otherCarbs'] | async | unit }} Other
           )
         </p>
         <p>
-          {{ nutrients['calcium'] | async | format }}/{{ goals['calcium'] | async | format }} Calcium &middot; {{nutrients['magnesium'] | async | format}}/{{ goals['magnesium'] | async | format }} Magnesium &middot; {{ nutrients['iron'] | async | format }}/{{ goals['iron'] | async | format }} Iron
+          {{ nutrients['calcium'] | async | unit }}/{{ goals['calcium'] | async | unit }} Calcium &middot; {{nutrients['magnesium'] | async | unit}}/{{ goals['magnesium'] | async | unit }} Magnesium &middot; {{ nutrients['iron'] | async | unit }}/{{ goals['iron'] | async | unit }} Iron
         </p>
         <p>
-          {{ nutrients['vitamin_a'] | async | format }}/{{ goals['vitamin_a'] | async | format }} Vitamin A &middot; {{nutrients['vitamin_b6'] | async | format}}/{{ goals['vitamin_b6'] | async | format }} Vitamin B6 &middot; {{ nutrients['vitamin_c'] | async | format }}/{{ goals['vitamin_c'] | async | format }} Vitamin C &middot; {{ nutrients['vitamin_d'] | async | format }}/{{ goals['vitamin_d'] | async | format }} Vitamin D
+          {{ nutrients['vitamin_a'] | async | unit }}/{{ goals['vitamin_a'] | async | unit }} Vitamin A &middot; {{nutrients['vitamin_b6'] | async | unit}}/{{ goals['vitamin_b6'] | async | unit }} Vitamin B6 &middot; {{ nutrients['vitamin_c'] | async | unit }}/{{ goals['vitamin_c'] | async | unit }} Vitamin C &middot; {{ nutrients['vitamin_d'] | async | unit }}/{{ goals['vitamin_d'] | async | unit }} Vitamin D
         </p>
       </ion-col>
     </ion-row>

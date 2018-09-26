@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { FormatPipe } from './format/format';
+import { UnitPipe } from './unit/unit';
 @NgModule({
-	declarations: [FormatPipe],
+	declarations: [UnitPipe],
 	imports: [],
-	exports: [FormatPipe]
+	exports: [UnitPipe]
 })
 export class PipesModule {}
