@@ -4,7 +4,7 @@ import { Observable, from, merge, of, Subject } from 'rxjs';
 import { map, tap, take } from 'rxjs/operators';
 import NUTRIENTS from '../../util/nutrients';
 import { set, isObject } from 'lodash';
-import * as math from 'mathjs';
+import { math, Unit } from '../../util/math';
 
 @Injectable()
 export class GoalsProvider {

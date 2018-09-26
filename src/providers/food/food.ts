@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Food } from '../../model/food';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import * as math from 'mathjs';
+import { math, Unit } from '../../util/math';
 import { TextDecoder } from 'text-encoding';
 import { set } from 'lodash';
 

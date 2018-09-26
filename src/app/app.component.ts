@@ -19,7 +19,6 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    math.createUnit('kcal', '4184 J');
   }
 }
 

@@ -4,7 +4,7 @@ import { FoodProvider } from '../../providers/food/food';
 import { tap, startWith, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
-import * as math from 'mathjs';
+import { math, Unit } from '../../util/math';
 import { set, isObject } from 'lodash';
 import { AmountedFood } from '../../model/amounted-food';
 import Utils from '../../util/util';
@@ -31,7 +31,7 @@ export class HomePage {
   );
 
   public nutrients = NUTRIENTS.reduce((nutrients, nutrientKey) => set(nutrients, nutrientKey, this.nutrientObservable(nutrientKey)), {});
-  private nutrientObservable(nutrientKey: string): Observable<math.Unit> {
+  private nutrientObservable(nutrientKey: string): Observable<Unit> {
     return combineLatest(Object.values(this.ingredients)).pipe(
       map(ingredients => ingredients.map(ingredient => ingredient[nutrientKey])),
       map(ingredients => Utils.sumUnits(ingredients))
