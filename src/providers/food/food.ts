@@ -10,9 +10,7 @@ import { set } from 'lodash';
 @Injectable()
 export class FoodProvider {
 
-  constructor(public http: HttpClient) {
-    math.createUnit('kcal', '4184 J')
-  }
+  constructor(public http: HttpClient) {}
   
   public getFood(foodName: string): Observable<Food> {
     return this.http.get(`/assets/foods/${foodName}.csv`, {responseType: 'arraybuffer'}).pipe(
